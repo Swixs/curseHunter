@@ -1,23 +1,35 @@
 
-// let numberOfFilms = +prompt("qual'è il tuo film preferito", );
-
-// console.log(numberOfFilms);
+let numberOfFilms = +prompt("Сколько фильмов вы посмотрели?", 0 );
 
 let personalMovieDB = {
-    // count: numberOfFilms,
+    count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
     privat: true,
 };
 
+    for(let i = 0; i < 2; i++){
+           
+       const a = prompt("Фильм"),
+             b = prompt("Оценка");
 
-const a = prompt("qual'è il tuo uno film preferito", ),
-      b = prompt("qualo grado il uno film"),
-      c = prompt("qual'è il tuo duo film preferito"),
-      d = prompt("qualo grado il duo film");
+                if(a != null && a != "" && b != null && b != "" && a.length < 50){
+                    personalMovieDB.movies[a] = b;
+                    console.log('ok');
+             } else {
+                console.log("errore")
+                i--;
+             }
+        }
 
-      personalMovieDB.movies[a] = b;
-      personalMovieDB.movies[c] = d;
+ if(personalMovieDB.count < 10){
+     console.log("Мало фильмов");
+ } else if(personalMovieDB.count > 10 && personalMovieDB.count < 30){
+    console.log("вы обычный зритель");
+ } else if(personalMovieDB.count > 30){
+    console.log("Вы киноман");
+ }
 
 console.log(personalMovieDB);
+    
